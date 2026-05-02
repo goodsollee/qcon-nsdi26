@@ -1,0 +1,72 @@
+# Build artifacts
+build/
+out/
+**/cmake_targets/ran_build/build/
+*.o
+*.d
+*.a
+*.so
+*.so.*
+*.dylib
+*.exe
+**/bin/
+**/obj/
+
+# Logs / runtime / capture
+*.log
+*.pcap
+*.pcapng
+results/
+perf_logs/
+emulator_logs/
+multi_queue_logs/
+webrtc_logs/
+qcon_runs/
+ric/ric_main/logs/
+testbed/oai/openairinterface5g/qcon/ric/logs/
+
+# Large data
+*.y4m
+*.bin
+*.zip
+*.tar
+*.tar.gz
+*.tar.xz
+
+# IDE / editor / OS
+.vscode/
+.idea/
+.DS_Store
+*~
+*.bak
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.pytest_cache/
+
+# AI / agent metadata
+.aider.*
+.aider/
+.claude/
+.cursor/
+
+# Backup / extracted
+.fr-*/
+*.dpkg-dist
+*.dpkg-bak
+
+# Secrets (never commit)
+*.pem
+*.key
+*.crt
+secrets/
+
+# Node (in case OAI's websrv frontend gets pulled in)
+node_modules/
+package-lock.json.bak

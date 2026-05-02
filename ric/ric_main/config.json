@@ -1,0 +1,49 @@
+{
+  "ric": {
+    "id": "ric-main",
+    "ip_address": "127.0.0.1",
+    "log_level": "ERROR"
+  },
+  "components": [
+    {
+      "type": "DU1",
+      "id": "pdcp_du_link1",
+      "ip_address": "127.0.0.1",
+      "kpm_port": 6655,
+      "rc_port": 6656,
+      "enabled": true,
+      "extra_params": {
+        "component": "pdcp"
+      }
+    },
+    {
+      "type": "DU2",
+      "id": "pdcp_du_link2",
+      "ip_address": "127.0.0.1",
+      "kpm_port": 6755,
+      "rc_port": 6756,
+      "enabled": true,
+      "extra_params": {
+        "component": "pdcp"
+      }
+    },
+    {
+      "type": "CU",
+      "id": "pdcp_sender",
+      "ip_address": "127.0.0.1",
+      "kpm_port": 6555,
+      "rc_port": 6556,
+      "enabled": true,
+      "extra_params": {
+        "component": "pdcp"
+      }
+    }
+  ],
+  // single, minrtt, dchannel, pd, qos, qcon
+  "scheduler": {
+    "enabled": true,
+    "scheduler_name": "qcon",
+    "enable_logging": true,
+    "dchannel_alpha" : 0.75
+  }
+}

@@ -1,0 +1,32 @@
+########## Multi-path Routing ##########
+# MP-TECHNIQUE defines the technique used for multi-path routing:
+# OnlyLTE: Route all packets to the LTE link.
+# OnlyNR: Route all packets to the NR link.
+# Commercial5G: Use LTE by default, use also NR link when LTE buffer exceeds a threshold. (minRTT, Throughput)
+# PAVE: Uses advanced algorithms to balance traffic across LTE and NR links.  
+MP-TECHNIQUE,minRTT
+
+# BUFFER-THRESHOLD is used when the Commercial5G technique (minRTT, Throughput) is selected.
+# It specifies the buffer threshold (in KB) above which traffic is routed to NR.
+BUFFER-THRESHOLD,30000  # Unit: B
+
+# ALPHA is EWMA parameters to be used in throughput estimation
+ALPHA, 0.5
+
+########## Link Adaptation ##########
+# LA-TECHNIQUE defines the technique used for link adaptation:
+# eMBB: Optimized for enhanced Mobile Broadband traffic (BLER: 10%)
+# URLLC: Optimized for Ultra-Reliable Low-Latency Communication (BLER: 1%)
+# PAVE: A custom technique balancing between throughput and latency.
+LA-TECHNIQUE,eMBB  # Options: eMBB, URLLC, PAVE
+
+########## Uplink Scheduling ##########
+# US-TECHNIQUE defines the uplink scheduling method:
+# Default: 3GPP default uplink scheduling procedure that introduces a scheduling delay
+# StaticQoS: Uses a static QoS configuration for uplink.
+# PAVE: Uses an advanced scheduling algorithm optimizes both delay and resource utilization.
+US-TECHNIQUE,Default  # Options: Default, StaticQoS, PAVE
+
+# QoS is used when the static QoS is selected
+# It specifies the uplink radio resource to be pre-allocated per seconds
+QoS,0.1  # Unit: Mbps

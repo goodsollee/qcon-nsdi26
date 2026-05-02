@@ -1,0 +1,118 @@
+{
+  "common": {
+    "role": "SENDER",
+    "logFoldername": "multi_queue_logs",
+    "path_num": 1,
+    "log_level": "INFO"
+  },
+  "ric": {
+    "ric_enabled": false,
+    "ipAddress": "127.0.0.1",
+    "kmpPort": 5555,
+    "rcPort": 5556,
+    "localKmpPort": 6555,
+    "localRcPort": 6556,
+    "kmp_report_interval_ms": 1000
+  },
+  "sender": {
+    "split_policy": 0
+  },
+  "du": {
+    "linkId": 1,
+    "bufferSize": 1000,
+    "slotDuration": 1,
+    "bandwidthTraceFile": "",
+    "bwUpdateInterval": 100,
+    "fixedBandwidth": 10000000,
+    "max_retransmissions": 3,
+    "reassembly_timeout_ms": 2000,
+    "status_prohibit_ms": 100,
+    "poll_retransmit_timer": 80,
+    "retransmission_timeout_ms": 1000,
+    "queues": [
+      {
+        "queueId": 0,
+        "priority": 3,
+        "bufferSize": 500,
+        "max_retransmissions": 3,
+        "retransmission_timeout_ms": 1000,
+        "poll_retransmit_timer_ms": 80
+      },
+      {
+        "queueId": 1,
+        "priority": 2,
+        "bufferSize": 300,
+        "max_retransmissions": 2,
+        "retransmission_timeout_ms": 1500,
+        "poll_retransmit_timer_ms": 100
+      },
+      {
+        "queueId": 2,
+        "priority": 1,
+        "bufferSize": 200,
+        "max_retransmissions": 1,
+        "retransmission_timeout_ms": 2000,
+        "poll_retransmit_timer_ms": 120
+      },
+      {
+        "queueId": 3,
+        "priority": 0,
+        "bufferSize": 100,
+        "max_retransmissions": 1,
+        "retransmission_timeout_ms": 3000,
+        "poll_retransmit_timer_ms": 150
+      }
+    ]
+  },
+  "ue": {
+    "logFolder": "ue_logs",
+    "rlc": {
+      "max_retransmissions": 3,
+      "bufferSize": 1000,
+      "reassembly_timeout_ms": 2000,
+      "status_pdu_interval_ms": 50,
+      "t_statusProhibit_ms": 100
+    },
+    "mac": {
+      "txOpportunityInterval": 10,
+      "txDelay": 5
+    },
+    "queues": [
+      {
+        "queueId": 0,
+        "priority": 3,
+        "bufferSize": 500,
+        "max_retransmissions": 3,
+        "retransmission_timeout_ms": 1000,
+        "poll_retransmit_timer_ms": 80
+      },
+      {
+        "queueId": 1,
+        "priority": 2,
+        "bufferSize": 300,
+        "max_retransmissions": 2,
+        "retransmission_timeout_ms": 1500,
+        "poll_retransmit_timer_ms": 100
+      },
+      {
+        "queueId": 2,
+        "priority": 1,
+        "bufferSize": 200,
+        "max_retransmissions": 1,
+        "retransmission_timeout_ms": 2000,
+        "poll_retransmit_timer_ms": 120
+      },
+      {
+        "queueId": 3,
+        "priority": 0,
+        "bufferSize": 100,
+        "max_retransmissions": 1,
+        "retransmission_timeout_ms": 3000,
+        "poll_retransmit_timer_ms": 150
+      }
+    ]
+  },
+  "receiver": {
+    "reordering_timeout_ms": 300
+  }
+}

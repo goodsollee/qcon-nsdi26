@@ -1,0 +1,65 @@
+{
+  "log_level": "ERROR",
+  "num_links": 2,
+  "network": {
+    "server_delay": 10,
+    "links": [
+      {
+        "id": 1,
+        "trace_column": 1,
+        "du_ric": {
+          "enabled": true,
+          "ip": "127.0.0.1",
+          "kpm_port": 5555,
+          "rc_port": 5556,
+          "local_kpm_port": 6655,
+          "local_rc_port": 6656,
+          "kpm_report_interval_ms": 1
+        }
+      },
+      {
+        "id": 2,
+        "trace_column": 2,
+        "du_ric": {
+          "enabled": true,
+          "ip": "127.0.0.1",
+          "kpm_port": 5555,
+          "rc_port": 5556,
+          "local_kpm_port": 6755,
+          "local_rc_port": 6756,
+          "kpm_report_interval_ms": 1
+        }
+      }
+    ]
+  },
+  "bandwidth": {
+    "trace_file": ".",
+    "default_bandwidth_mbps": 10000
+  },
+  "pdcp": {
+    "reordering_timeout_ms": 200,
+    "log_folder": "emulator_logs"
+  },
+  "rlc": {
+    "buffer_size": 3000,
+    "retransmission_timeout_ms": 300,
+    "poll_retransmit_timer_ms": 85,
+    "max_retransmissions": 3,
+    "reassembly_timeout_ms": 100,
+    "status_pdu_interval_ms": 1,
+    "status_prohibit_timer_ms": 6
+  },
+  "mac": {
+    "tx_opportunity_interval": 10,
+    "tx_delay": 5
+  },
+  "cu_ric": {
+    "enabled": true,
+    "ip": "127.0.0.1",
+    "kpm_port": 5555,
+    "rc_port": 5556,
+    "local_kpm_port": 6555,
+    "local_rc_port": 6556,
+    "kpm_report_interval_ms": 3
+  }
+}

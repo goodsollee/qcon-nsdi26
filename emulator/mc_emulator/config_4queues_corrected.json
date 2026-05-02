@@ -1,0 +1,86 @@
+{
+  "log_level": "INFO",
+  "num_links": 1,
+  "network": {
+    "server_delay": 10,
+    "links": [
+      {
+        "id": 1,
+        "trace_column": 1,
+        "du_ric": {
+          "enabled": true,
+          "ip": "127.0.0.1",
+          "kmp_port": 5555,
+          "rc_port": 5556,
+          "local_kmp_port": 6655,
+          "local_rc_port": 6656,
+          "kmp_report_interval_ms": 1
+        }
+      }
+    ]
+  },
+  "bandwidth": {
+    "trace_file": "driving_traces.csv",
+    "default_bandwidth_mbps": 10
+  },
+  "pdcp": {
+    "reordering_timeout_ms": 200,
+    "log_folder": "emulator_logs"
+  },
+  "rlc": {
+    "buffer_size": 3000,
+    "retransmission_timeout_ms": 300,
+    "poll_retransmit_timer_ms": 85,
+    "max_retransmissions": 3,
+    "reassembly_timeout_ms": 100,
+    "status_pdu_interval_ms": 1,
+    "status_prohibit_timer_ms": 35,
+    "queues": [
+      {
+        "id": 0,
+        "priority": 3,
+        "buffer_size": 500,
+        "max_retransmissions": 3,
+        "retransmission_timeout_ms": 1000,
+        "poll_retransmit_timer_ms": 80
+      },
+      {
+        "id": 1,
+        "priority": 2,
+        "buffer_size": 300,
+        "max_retransmissions": 2,
+        "retransmission_timeout_ms": 1500,
+        "poll_retransmit_timer_ms": 100
+      },
+      {
+        "id": 2,
+        "priority": 1,
+        "buffer_size": 200,
+        "max_retransmissions": 1,
+        "retransmission_timeout_ms": 2000,
+        "poll_retransmit_timer_ms": 120
+      },
+      {
+        "id": 3,
+        "priority": 0,
+        "buffer_size": 100,
+        "max_retransmissions": 1,
+        "retransmission_timeout_ms": 3000,
+        "poll_retransmit_timer_ms": 150
+      }
+    ]
+  },
+  "mac": {
+    "tx_opportunity_interval": 10,
+    "tx_delay": 5
+  },
+  "cu_ric": {
+    "enabled": true,
+    "ip": "127.0.0.1",
+    "kmp_port": 5555,
+    "rc_port": 5556,
+    "local_kmp_port": 6555,
+    "local_rc_port": 6556,
+    "kmp_report_interval_ms": 3
+  }
+}
