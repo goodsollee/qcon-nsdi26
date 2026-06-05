@@ -43,6 +43,14 @@ This repository contains:
 
 Each subdir has its own `README.md` for build/run.
 
+## 🚧 What's Next
+
+We are currently building a **RIC platform** that makes app-insights
+easily accessible to the RAN. QCON will be integrated into this
+platform.
+
+**Stay tuned!** ⭐ Star this repo to get notified.
+
 ## License
 
 MIT.
